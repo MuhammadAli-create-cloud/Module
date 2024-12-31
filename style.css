@@ -55,10 +55,12 @@ body {
     margin: 0;
     padding: 10px;
     font-size: 1.5rem;
+    display: inline-block;
 }
 
 .menu-item.chicken h3 {
     background-color: #f8b9b9;
+    
 }
 
 .menu-item.beef h3 {
@@ -67,6 +69,7 @@ body {
 
 .menu-item.sushi h3 {
     background-color: #ffe4b5;
+    
 }
 
 .menu-item p {
@@ -76,16 +79,33 @@ body {
     color: #555;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 972px) {
     .menu-item {
-        flex: 1 1 calc(50% - 20px);
-        max-width: calc(50% - 20px);
+        flex: 1 1 calc(50% - 10px);
+        max-width: calc(100% - 20px);
     }
 }
 
-@media (max-width: 480px) {
+
+@media (max-width: 767px) {
     .menu-item {
         flex: 1 1 100%;
         max-width: 100%;
     }
+}
+
+@media only screen and (min-width: 768px) {
+    .desktop {
+        display: col-lg-4 col-md-12 col-sd-12;
+    }
+    .mobile, .tablet {
+        display: block;
+    }
+}
+
+element{
+columns: col-lg-4 col-md-6 col-sd-12;
+columns: col-lg-4 col-md-6 col-sd-12;
+columns: col-lg-4 col-md-12 col-sd-12;
+
 }
