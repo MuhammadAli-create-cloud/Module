@@ -1,33 +1,91 @@
-h1{
-	color: red; text-align: center;
-	 margin: 0;
+*{
+    margin: 0;
     padding: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
-.container{
-width: 400px;
-border:2px solid red;
-display: flex;
-gap: 20px	;
-justify-content: space-around;
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
-.box{
-	border:2px solid green;
-	margin: 10px 0;
-	width: 80;
-	
+.container {
+    text-align: right;
+    padding: 20px;
 }
 
-#box-1{
-		
+
+.menu-header {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
-#box-2{
-
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
-#box-3{
-	
+.menu-item {
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: calc(33.333% - 40px);
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item h3 {
+    background: #f8f8f8;
+    margin: 0;
+    padding: 10px;
+    font-size: 1.5rem;
+}
+
+.menu-item.chicken h3 {
+    background-color: #f8b9b9;
+}
+
+.menu-item.beef h3 {
+    background-color: #e57373;
+}
+
+.menu-item.sushi h3 {
+    background-color: #ffe4b5;
+}
+
+.menu-item p {
+    text-align: center;
+    padding: 15px;
+    font-size: 1rem;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .menu-item {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 }
