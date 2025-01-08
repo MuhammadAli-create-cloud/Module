@@ -1,111 +1,141 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f9f9f9;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .navbar {
     display: flex;
-    justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    justify-content: space-between;
+    background-color: #333; /* Navbar background */
+    padding: 10px 20px;
+    color: white;
+    position: relative;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Hide the default checkbox */
+  .menu-toggle {
+    display: none;
+  }
+  
+  /* Menu button (hamburger icon) */
+  .menu-button {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Menu content (hidden by default) */
+  .menu-content {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Ensure menu background matches navbar */
+    z-index: 1000;
+  }
+  
+  .menu {
+    list-style: none;
+    padding: 0;
     margin: 0;
-}
-
-.container {
-    text-align: right;
-    padding: 20px;
-}
-
-
-.menu-header {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.menu {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.menu-item {
-    flex: 1 1 calc(33.333% - 40px);
-    max-width: calc(33.333% - 40px);
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.menu-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.menu-item h3 {
-    background: #f8f8f8;
+  }
+  
+  .menu li {
     margin: 0;
-    padding: 10px;
-    font-size: 1.5rem;
-    display: inline-block;
-}
-
-.menu-item.chicken h3 {
-    background-color: #f8b9b9;
-    
-}
-
-.menu-item.beef h3 {
-    background-color: #e57373;
-}
-
-.menu-item.sushi h3 {
-    background-color: #ffe4b5;
-    
-}
-
-.menu-item p {
+  }
+  
+  .menu a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #333; /* Menu item background */
+    border-bottom: 1px solid #575757;
+    transition: background-color 0.3s;
+  }
+  
+  .menu a:hover {
+    background-color: #575757; /* Highlighted item background */
+  }
+  
+  /* Checkbox toggle logic */
+  .menu-toggle:checked ~ .menu-content {
+    display: block; /* Show menu when checkbox is checked */
+  }
+  
+  /* Content Section */
+  .menu-header {
     text-align: center;
+    margin: 20px 0;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Grid for Menu Items */
+  .menu-details {
+    display: grid;
+    gap: 20px; /* Spacing between grid items */
+    margin: 20px 0;
+    grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
+  }
+  
+  .menu-item {
+    background-color: #f4f4f4; /* Box background */
+    border: 1px solid #ddd; /* Border for separation */
     padding: 15px;
-    font-size: 1rem;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .menu-item h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .menu-item p {
+    margin: 10px 0 0;
     color: #555;
-}
-
-@media (max-width: 972px) {
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .menu-details {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+  }
+  
+  @media (max-width: 550px) {
+    .menu-button {
+      display: block; /* Show menu button on small screens */
+    }
+  
+    .menu-content {
+      display: none; /* Hide menu content by default */
+    }
+  
+    .menu-details {
+      grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+  }@media (max-width: 972px) {
     .menu-item {
         flex: 1 1 calc(50% - 10px);
         max-width: calc(100% - 20px);
+    
+        
     }
-}
-
-
-@media (max-width: 767px) {
-    .menu-item {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    .desktop {
-        display: col-lg-4 col-md-12 col-sd-12;
-    }
-    .mobile, .tablet {
-        display: block;
-    }
-}
-
-element{
-columns: col-lg-4 col-md-6 col-sd-12;
-columns: col-lg-4 col-md-6 col-sd-12;
-columns: col-lg-4 col-md-12 col-sd-12;
-
 }
